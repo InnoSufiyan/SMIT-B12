@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>This is my Form</h1>
+
+    <form action="https://facebook.com">
+      <fieldset>
+        <legend>Course Enrollment Form</legend>
+
+        <p>First Name</p>
+        <input
+          type="text"
+          value="Muhammad"
+          placeholder="First Name"
+          name="firstname"
+        />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="">
+        <br />
+        <p>Password</p>
+        <input
+          type="password"
+          name="password"
+          placeholder="type your password here"
+          required
+        />
+        <br />
+        <textarea name="description" id="" cols="15" rows="5"></textarea>
+        <br />
+        <input type="radio" value="Male" name="gender" />Male
+        <br />
+        <input type="radio" name="gender" value="female" id="" checked />Female
+        <br />
+        <p>Technologies learnt so far</p>
+
+        <input type="checkbox" name="technology" value="Html" checked />Html
+        <input type="checkbox" name="technology" value="Firebase" />Firebase
+
+        <br />
+        <p>We have different Courses for you, select any one</p>
+        <!-- <input type="radio" name="course" id="">Web Development
+    <input type="radio" name="course" id="">Mobile Development
+    <input type="radio" name="course" id="">Graphic Designer
+    <input type="radio" name="course" id="">Data Sciences
+    <input type="radio" name="course" id="">Devops
+    <input type="radio" name="course" id="">Microsoft Tools -->
+        <select name="courses" multiple="multiple">
+          <option value="Web Development">Web Development</option>
+          <option value="Mobile Development">Mobile Development</option>
+          <option value="Graphic Designer">Graphic Designer</option>
+          <option value="Data Sciences">Data Sciences</option>
+          <option value="Devops">Devops</option>
+          <option value="Microsoft Tools">Microsoft Tools</option>
+          <option value="course" selected>Courses</option>
+        </select>
+        <br />
+        <p>Upload your picture</p>
+        <input type="file" />
+        <br />
+        <br />
+        <label for="dateofbirth">DOB</label>
+        <input type="date" />
+        <br />
+        <label for="search">Search</label>
+        <input type="search" />
+        <br />
+        <input type="image" src="./images/submit.png" width="50" height="50" />
+        <button>
+          <img src="./images/images.png" width="10" height="10" alt="" /> Buy
+          Now
+        </button>
+      </fieldset>
+    </form>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  </body>
+</html>

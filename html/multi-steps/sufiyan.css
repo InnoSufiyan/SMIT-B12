@@ -1,0 +1,33 @@
+body {
+    background-color: blue;
+    color: white;
+}
+
+#mainhun6thpara {
+    color: yellow;
+}
+
+.topi {
+    color: black;
+}
+
+#office {
+    color: red;
+}
+
+#second {
+    border: 2px solid white;
+}
+
+#thirdAndFourth {
+    background-color: white;
+    color: black;
+}
+
+#thirdHeading {
+    background-color: green;
+}
+
+#seth {
+    border: 2px solid black;
+}
