@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+}
+
+
+h1 {
+  background-image: url('../assets/waves.jpg');
+  background-size: cover;
+  animation-name: wavesAnimation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes wavesAnimation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+/* .waves {
+    height: 100px;
+    width: 300px;
+    background-image: url('../assets/waves.avif');
+} */
+
+/* .mask {
+  mask-image: url("../assets/waves.jpg");
+  -webkit-background-clip: text;
+} */

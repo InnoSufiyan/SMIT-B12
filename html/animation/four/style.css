@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+#pappa {
+  width: 200px;
+  height: 200px;
+  animation-name: heartBeat;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+.circle {
+  height: 400px;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: ringAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.doCircle {
+  height: 400px;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: ringAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.teenCircle {
+  height: 400px;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: ringAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.charCircle {
+  height: 400px;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: ringAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 0.9s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+.fiveCircle {
+  height: 400px;
+  width: 400px;
+  border: 5px solid red;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: ringAnimation;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-delay: 0.12s;
+  animation-iteration-count: infinite;
+  z-index: -1;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1.4);
+  }
+  90% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes ringAnimation {
+  0% {
+    transform: scale(0);
+    border: 10px solid blue
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    border: 3px solid yellow
+  }
+}

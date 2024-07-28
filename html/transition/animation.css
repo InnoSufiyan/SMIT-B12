@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.environment {
+  background-image: url("./assets/bg.jpg");
+  height: 100vh;
+  background-size: cover;
+  animation-name: backgroundMover;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.car {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 220px;
+}
+
+.car img {
+  height: 100%;
+  width: 100%;
+}
+.bike {
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 520px;
+  animation-name: bikeMover;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom left;
+}
+
+.bike img {
+  height: 100%;
+  width: 100%;
+}
+
+.bawlasuperman {
+  height: 150px;
+  width: 150px;
+  animation-name: superman;
+  animation-timing-function: linear;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  position: absolute;
+  top: 200px;
+}
+
+.bawlasuperman img {
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes backgroundMover {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+@keyframes bikeMover {
+  0% {
+    left: -100px;
+  }
+  25% {
+    left: 50px;
+    transform: rotate(-10deg);
+  }
+  50% {
+    left: 100px;
+    transform: rotate(-30deg);
+  }
+  65% {
+    transform: rotate(-90deg);
+  }
+  75% {
+    left: 900px;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 1000px;
+  }
+}
+
+@keyframes superman {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 1200px;
+  }
+}

@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.pappa {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.floor {
+  width: 700px;
+  height: 10px;
+  background-color: white;
+}
+
+.woodPappa {
+  display: flex;
+  gap: 90px;
+}
+
+.wood {
+  height: 500px;
+  width: 10px;
+  background-color: white;
+  position: relative;
+  transform-origin: top;
+}
+
+.wood:nth-child(1) {
+  animation-name: ballAnimation1;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.wood:nth-child(5) {
+  animation-name: ballAnimation2;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.wood::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  left: -50px;
+  z-index: 5;
+}
+
+@keyframes ballAnimation1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes ballAnimation2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

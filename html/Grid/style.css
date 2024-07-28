@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.baap {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.one {
+    
+    background-color: blue;
+}
+.two {
+    
+    background-color: green;
+}
+.three {
+    
+    background-color: red;
+}
+.four {
+    
+    background-color: yellow;
+}
+.five {
+    
+    background-color: purple;
+}
+.six {
+    
+    background-color: pink;
+}
+.seven {
+    
+    background-color: blue;
+}
+.eight {
+    
+    background-color: red;
+}
+.nine {
+    
+    background-color: green;
+}
+.ten {
+    
+    background-color: orange;
+}

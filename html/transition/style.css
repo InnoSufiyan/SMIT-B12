@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+.sufiyan {
+  background-color: blue;
+  color: white;
+  padding: 5px 10px;
+  border: 2px solid yellow;
+  border-radius: 0px;
+  animation-name: sufiyan;
+  animation-duration: 0.5s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* transition-property: all;
+  transition-duration: 500ms; */
+  /* transition-delay: 2000ms; */
+}
+
+.sufiyan:hover {
+  /* background-color: red;
+  border-radius: 5px;
+  transform: rotateZ(360deg) */
+}
+
+@keyframes sufiyan {
+  from {
+    background-color: blue;
+    transform: rotateZ(0deg)
+  }
+  to {
+    background-color: red;
+    transform: rotateZ(360deg);
+  }
+}

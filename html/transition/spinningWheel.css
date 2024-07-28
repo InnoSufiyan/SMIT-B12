@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.phuntru {
+  height: 15px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.phuntru img {
+  height: 100%;
+  width: 100%;
+}
+
+.wheel {
+  height: 100px;
+  width: 100px;
+  animation-name: ghoomo;
+  animation-duration: 10s;
+  animation-iteration-count: 4;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-delay: 10s;
+}
+
+.wheel img {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.completeSpinningWheel {
+  position: relative;
+}
+
+@keyframes ghoomo {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

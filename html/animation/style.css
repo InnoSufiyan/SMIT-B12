@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.pappa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wheel {
+  height: 300px;
+  width: 300px;
+  animation-name: spinner;
+  animation-duration: 5s;
+  animation-delay: 1.5s;
+  animation-iteration-count: 3;
+  animation-timing-function: linear;
+}
+.phuntru {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transform: rotate(45deg);
+  animation-name: phuntruAnimation;
+  animation-duration: 0.2s;
+  animation-delay: 1.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 30% 44%;
+  animation-timing-function: linear;
+}
+.kutta {
+  height: 100px;
+  width: 130px;
+  position: absolute;
+  top: 100px;
+  left: 90px;
+  transform: scale(0.8);
+  animation-name: kuttaAnimation;
+  animation-duration: 0.5s;
+  animation-delay: 1.4s;
+  animation-fill-mode: forwards;
+  transform-origin: bottom;
+}
+.bat {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  bottom: -200px;
+  animation-name: batAnimation;
+  animation-duration: 2s;
+  transform-origin: bottom;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes batAnimation {
+  0% {
+    bottom: -200px;
+    left: 500px;
+    transform: rotate(0deg);
+  }
+  30% {
+    bottom: 300px;
+    left: 100px;
+    transform: rotate(-90deg);
+  }
+  60% {
+    bottom: 190px;
+    left: 230px;
+    transform: rotate(45deg);
+  }
+  80% {
+    bottom: 190px;
+    left: 230px;
+    transform: rotate(45deg);
+  }
+  100% {
+    bottom: -200px;
+    left: 230px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes kuttaAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes phuntruAnimation {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(70deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
