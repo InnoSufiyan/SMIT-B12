@@ -1,0 +1,72 @@
+:root {
+  --fontsColor: rgb(104, 81, 255);
+  --backgroundColorBody: white;
+  --backgroundColorElements: rgb(104, 81, 255);
+  --disableColor: #d3d3d3;
+  --cardColor1: #edebff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbar {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+#logo {
+  width: 250px;
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 50%;
+}
+
+ul li:nth-child(1),
+ul li:nth-child(3) {
+  color: var(--fontsColor);
+}
+ul li:nth-child(2),
+ul li:nth-child(4),
+ul li:nth-child(5) {
+  color: var(--disableColor);
+}
+
+#jobPostBtn {
+  color: var(--fontsColor);
+  font-size: var(--headingSize);
+}
+
+#cardsSection {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  background-image: linear-gradient(var(--cardColor1), white);
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

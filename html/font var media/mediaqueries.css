@@ -1,0 +1,74 @@
+:root {
+  --fontsColor: rgb(104, 81, 255);
+  --backgroundColorBody: white;
+  --backgroundColorElements: rgb(104, 81, 255);
+  --disableColor: #d3d3d3;
+  --cardColor1: #edebff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#cardsSection {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  background-image: linear-gradient(var(--cardColor1), white);
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Smartphones */
+@media only screen and (max-width: 500px) {
+  #cardsSection {
+    grid-template-columns: auto;
+  }
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+  #cardsSection {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* Normal */
+@media (min-width: 769px) and (max-width: 1200px) {
+  #cardsSection {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+/* Widescreen */
+@media (min-width: 1201px) {
+  body {
+    background: black;
+  }
+
+  #widescreen h1 {
+    display: block;
+  }
+}
+
+/* Landscape */
+@media (max-height: 500px) {
+  body {
+    background: orange;
+  }
+
+  #landscape h1 {
+    display: block;
+  }
+}
