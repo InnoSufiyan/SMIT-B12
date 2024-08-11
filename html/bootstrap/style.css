@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#cardsArea {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h5 {
+    text-align: center;
+}
+.card-body p {
+    text-align: center;
+}
+
+.meraBtn {
+    background-color: red !important;
+}
