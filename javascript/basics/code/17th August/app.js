@@ -59,4 +59,40 @@ const fatherName = "Waris Khan"; // at the time of declaration assignment is nec
 // console.log(parosiBachaSchool);
 // console.log(hamareyBachaSchool);
 
+// es5 ""  ''
+// es6 ``
+// const name = `Quaid e Azam ne farmaya, "tu chal main aya"`
 
+// var name = prompt("What is your name ?");
+
+// var jobTitle = prompt("What job you do?");
+
+// console.log(name);
+// console.log(jobTitle);
+
+// document.write(
+//   "Hello, Welcome Mr " +
+//     name +
+//     " , yahaan hum aap ko tips dengey aap ki job " +
+//     jobTitle +
+//     " se related"
+// );
+
+// //template literals
+// document.write(
+//   `Hello, Welcome Mr ${name} , yahaan hum aap ko tips dengey aap ki job ${jobTitle} se related`
+// );
+
+let number = 10;
+number += 2;
+
+console.log(number); //12
+number += 8;
+
+console.log(number); //20
+number -= 3;
+
+console.log(number); //17
+number += 1;
+
+console.log(number); //18
