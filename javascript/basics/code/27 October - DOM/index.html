@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #buttonGroup {
+        display: flex;
+        gap: 20px;
+      }
+
+      #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .imageBox {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+      .imageBox img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div class="imageBox">
+        <img id="image" src="" />
+      </div>
+      <h3 id="name">Banday ka naam</h3>
+      <h3 id="description">Banday ki job description</h3>
+      <h3 id="review">Review</h3>
+      <button onclick="previousHandler()">Previous</button>
+      <button onclick="nextHandler()">Next</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

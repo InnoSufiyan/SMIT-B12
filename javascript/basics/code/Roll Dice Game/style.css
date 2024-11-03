@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  background: linear-gradient(to bottom right, red, purple);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameArea {
+    height: 600px;
+    width: 1200px;
+    background-color: grey;
+    display: flex;
+    position: relative;
+}
+
+.playerArea {
+    width: 50%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.activePlayer {
+    background-color: white;
+}
+
+h1 {
+    font-size: 200px;
+}
+
+.currentScore {
+    background-color: red;
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    font-size: 20px;
+}
+
+#beechKiCheezeyn {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 44%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+}

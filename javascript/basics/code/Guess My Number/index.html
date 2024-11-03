@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div style="display: flex; justify-content: space-between">
+      <button onclick="again()">Again!</button>
+      <p>Between 1 and 20</p>
+    </div>
+    <h2 style="text-align: center">Level : <span id="level">1</span></h1>
+    <h1 style="text-align: center">Guess My Number !</h1>
+    <div class="line"></div>
+    <div id="questionMarkbox">?</div>
+    <div id="main">
+      <div id="leftArea" class="mainChild">
+        <input oninput="inputChange()" id="userInput" type="number" placeholder="00" />
+        <button onclick="check()">Check</button>
+      </div>
+      <div id="rightArea" class="mainChild">
+        <p id="replaceableText">start guessing ....</p>
+        <p>Score: <span id="score">20</span></p>
+        <p>High Score: <span id="highScore">0</span></p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
