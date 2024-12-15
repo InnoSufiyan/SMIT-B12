@@ -67,8 +67,35 @@ const foodMenu = [
   },
 ];
 
+const buttons = [
+  {
+    title: "All",
+    fn: "allItems()",
+  },
+  {
+    title: "Breakfast",
+    fn: "breakFastItems()",
+  },
+  {
+    title: "Lunch",
+    fn: "lunchItems()",
+  },
+  {
+    title: "Shakes",
+    fn: "shakesItems()",
+  },
+];
+
+buttons.forEach(function (btn) {
+  const button = document.createElement("button");
+  button.innerText = btn.title;
+  button.setAttribute("onclick", btn.fn);
+  document.querySelector("#buttonGroup").appendChild(button);
+});
+
 foodMenu.forEach(function (foodItem) {
   const card = document.createElement("div");
+  card.setAttribute("id", foodItem.name);
   card.classList.add("card");
   card.innerHTML = `<img
   src=${foodItem.img}
