@@ -1,4 +1,4 @@
-import { signup } from "./firebase.js";
+import { signup } from "../firebase.js";
 
 const firstName = document.querySelector("#firstName");
 const lastName = document.querySelector("#lastName");
