@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -32,7 +33,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="../myProfile/index.html">My Profile</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Shop</a>
@@ -86,10 +87,15 @@
           </div>
           <div class="modal-body">
             <h2 class="fs-5">Description</h2>
-            <textarea name="" id="descriptionModalHtml" cols="60" rows="10"></textarea>
+            <textarea
+              name=""
+              id="descriptionModalHtml"
+              cols="60"
+              rows="10"
+            ></textarea>
             <hr />
             <h2 class="fs-5">Profile Picture Url</h2>
-            <input type="text" id="profilePictureUrlHtml">
+            <input type="text" id="profilePictureUrlHtml" />
           </div>
           <div class="modal-footer">
             <button
@@ -99,7 +105,9 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" id="updateProfileBtn">Save Changes</button>
+            <button type="button" class="btn btn-primary" id="updateProfileBtn">
+              Save Changes
+            </button>
           </div>
         </div>
       </div>
@@ -125,7 +133,44 @@
           >
         </div>
       </div>
-      <div></div>
+      <div style="width: 80%">
+        <h3 style="text-align: center">Post Feed Area</h3>
+        <div id="postInputArea">
+          <input type="text" id="postDataInputHtml" placeholder="What's up? Want to share anything?" />
+          <input type="text" id="postUrlInputHtml" placeholder="Post a Picture Url here" />
+          <button id="postBtn">Post</button>
+        </div>
+        <div id="allPostsUI">
+          <!-- first post screen is here -->
+          <!-- <div class="card">
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 20px;">
+                  <div id="profilePictureInPostUI">
+                    <img src="https://www.toastycard.com/hubfs/Imported_Blog_Media/download-23-1.jpeg" alt="">
+                  </div>
+                  <h5 class="card-title">Card title</h5>
+                </div>
+                <div class="buttons">
+                  <button id="editBtn">Edit</button>
+                  <button id="deleteBtn">Delete</button>
+                </div>
+              </div>
+              <p class="card-text">
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </p>
+              <p class="card-text">
+                <small class="text-body-secondary"
+                  >Last updated 3 mins ago</small
+                >
+              </p>
+            </div>
+            <img src="https://static.toiimg.com/thumb/msid-87685945,width-400,resizemode-4/87685945.jpg" class="card-img-bottom" alt="..." />
+          </div> -->
+        </div>
+      </div>
     </div>
 
     <script
