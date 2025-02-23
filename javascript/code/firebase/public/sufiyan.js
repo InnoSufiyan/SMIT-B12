@@ -17,7 +17,8 @@ import {
   orderBy,
   limit,
   query,
-  where
+  where,
+  deleteDoc
 } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
 
@@ -97,49 +98,27 @@ export function login(email, password) {
     });
 }
 
-// export function loginStateObserver() {
-//   return new Promise(function (resolve) {
-//     onAuthStateChanged(auth, (user) => {
-//       if (user) {
-//         // User is signed in, see docs for a list of available properties
-//         // https://firebase.google.com/docs/reference/js/auth.user
-//         const uid = user.uid;
-//         console.log(uid, "==>> uid");
-//         resolve(uid);
-//         // ...
-//       } else {
-//         // User is signed out
-//         // ...
-//         console.log("==>> kaddu koi banda login nai hai");
-//         setTimeout(() => {
-//           window.location.href = "../signup/index.html";
-//         }, 5000);
-//       }
-//     });
-//   });
-// }
-
 export function loginStateObserver() {
- return new Promise((resolve, reject)=> {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/auth.user
-      const uid = user.uid;
-      console.log(uid, "==>>> yeh wala banda login hai")
-      resolve(uid)
-      // ...
-    } else {
-      // User is signed out
-      // ...
-      alert("No User logged In, Sorry kicking you out")
-      setTimeout(()=> {
-        window.location.href = '../login/login.html'
-      }, 3000)
-      reject("No User is logged In")
-    }
-  });
- })
+  return new Promise((resolve, reject) => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/auth.user
+        const uid = user.uid;
+        console.log(uid, "==>>> yeh wala banda login hai")
+        resolve(uid)
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        alert("No User logged In, Sorry kicking you out")
+        setTimeout(() => {
+          window.location.href = '../index.html'
+        }, 3000)
+        reject("No User is logged In")
+      }
+    });
+  })
 }
 
 export async function getSingleDocument(uid) {
@@ -162,9 +141,9 @@ export async function signout() {
     await signOut(auth);
     console.log("==>> signout successfully");
     setTimeout(() => {
-      window.location.href = "../login/login.html";
+      window.location.href = "../index.html";
     }, 3000);
-  } catch (error) {}
+  } catch (error) { }
 }
 
 export async function updateProfile(
@@ -196,17 +175,17 @@ export async function addASingleDocumentWithoutGivingUniqueId(postData) {
 
 export async function getAllPostsFromFirestore() {
   let posts = [];
-    const q = query(collection(db, "posts"), orderBy("data"));
-    const querySnapshot = await getDocs(q);
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      posts.push({
-        id: doc.id,
-        ...doc.data(),
-      });
+  const q = query(collection(db, "posts"), orderBy("data"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    // doc.data() is never undefined for query doc snapshots
+    posts.push({
+      id: doc.id,
+      ...doc.data(),
+    });
   });
-  
-  return new Promise((resolve, reject)=> {
+
+  return new Promise((resolve, reject) => {
     resolve(posts)
   })
 }
@@ -224,9 +203,20 @@ export async function getAllPostsOfASingleUser(loggedInUserId) {
       id: doc.id,
       ...doc.data()
     })
-    
+
   });
-  return new Promise((resolve, reject)=> {
+  return new Promise((resolve, reject) => {
     resolve(posts)
   })
+}
+
+export async function deleteFromFireStore(uid) {
+  await deleteDoc(doc(db, "posts", uid));
+  window.location.reload()
+}
+
+export async function updatePostFromFirebase(postUid, postData) {
+  await setDoc(doc(db, "posts", postUid), postData);
+
+  window.location.reload()
 }

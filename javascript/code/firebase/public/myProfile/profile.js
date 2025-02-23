@@ -1,4 +1,4 @@
-import { getAllPostsOfASingleUser, loginStateObserver } from "../firebase.js"
+import { getAllPostsOfASingleUser, loginStateObserver } from "../sufiyan.js"
 
 console.log("====>> jee dost hum profile page per aagaey hain")
 

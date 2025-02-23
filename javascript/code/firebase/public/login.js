@@ -1,4 +1,4 @@
-import { login } from "../firebase.js";
+import { login } from "./sufiyan.js";
 
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
