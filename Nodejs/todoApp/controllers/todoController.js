@@ -24,14 +24,35 @@ export const addTodo = async (req, res) => {
 }
 
 export const getTodos = async (req, res) => {
-    const allTodos = await Todo.find()
+    const { limit, page } = req.query
+    let limitOfRecords
+    if (!limit) {
+        limitOfRecords = 10
+    } else {
+        limitOfRecords = limit
+    }
+    let skip = (page - 1) * limitOfRecords
+    const countNumbers = await Todo.countDocuments()
+    const allTodos = await Todo.find().limit(limitOfRecords).skip(skip).sort({ createdAt: -1 }).select('-__v')
 
-    successHandler(res, 200, "All Todos get successfully", allTodos)
+    console.log(countNumbers, "==>> countNumbers")
+
+    successHandler(res, 200, "All Todos get successfully", allTodos, countNumbers)
 }
 
 export const getTodo = async (req, res) => {
-    const {email} = req.params
-    const todo = await Todo.find({creatorEmail: email})
+    console.log(req.params, "===>>> req.params")
+    const { todoId } = req.params
+    const todo = await Todo.findById(todoId)
 
     successHandler(res, 200, "Get Todo by ID", todo)
 }
+export const getTodoByEmail = async (req, res) => {
+    console.log(req.params, "===>>> req.params")
+    const { email } = req.params
+    const { complete } = req.query
+    const todo = await Todo.find({ creatorEmail: email, complete: complete })
+
+    successHandler(res, 200, "Get Todo by ID", todo)
+}
+

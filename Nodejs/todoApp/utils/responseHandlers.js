@@ -1,15 +1,18 @@
-export const successHandler = (res, statusCode, message, data) => {
+const successHandler = (res, statusCode, message, data, count) => {
     return res.status(statusCode).json({
         status: true,
         message: message,
-        data: data
+        data: data,
+        count: count || null
     })
 }
 
-export const errorHandler = (res, statusCode, message, error) => {
+const errorHandler = (res, statusCode, message, error) => {
     return res.status(statusCode).json({
         status: false,
         message: message,
         error: error
     })
 }
+
+export default {successHandler, errorHandler}
