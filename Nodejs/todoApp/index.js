@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import { authRoutes } from "./routes/authRoutes.js"
 import { todoRoutes } from "./routes/todoRoutes.js"
 import { connectDB } from "./utils/connectDB.js"
+import './cronJob.js'
 
 dotenv.config()
 

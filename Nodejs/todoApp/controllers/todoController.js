@@ -2,19 +2,20 @@ import Todo from "../models/Todo.js"
 import { errorHandler, successHandler } from "../utils/responseHandlers.js"
 
 export const addTodo = async (req, res) => {
+    console.log(req.user, "======>>> req.user")
+
     const {
-        todoMessage,
-        creatorEmail
+        todoMessage
     } = req.body
 
-    if (!todoMessage || !creatorEmail) {
+    if (!todoMessage) {
         return errorHandler(res, 400, "Missing Fields")
     }
 
     try {
         await Todo.create({
             todoMessage,
-            creatorEmail
+            creatorId: req.user._id
         })
 
         return successHandler(res, 200, "Todo Created Successfully")
@@ -51,8 +52,40 @@ export const getTodoByEmail = async (req, res) => {
     console.log(req.params, "===>>> req.params")
     const { email } = req.params
     const { complete } = req.query
-    const todo = await Todo.find({ creatorEmail: email, complete: complete })
+    const todo = await Todo.find({ complete: complete })
 
     successHandler(res, 200, "Get Todo by ID", todo)
 }
 
+export const deleteTodo = async (req, res) => {
+    try {
+        console.log(req.user, "==>> req.user")
+
+        const { id } = req.params
+
+        if (!req.user) {
+            return errorHandler(res, 400, "No User Details Found")
+        }
+
+        const isTodoExist = await Todo.findById(id)
+
+        console.log(isTodoExist, "==>> isTodoExist")
+
+        if (!isTodoExist) {
+            return errorHandler(res, 400, "Todo Not Found")
+        }
+
+        if (req.user.isAdmin || req.user._id === isTodoExist.creatorId) {
+
+            await Todo.findByIdAndDelete(id)
+            return successHandler(res, 200, "Deleted Todo Successfully")
+        } else {
+            return errorHandler(res, 400, "You cannot delete any others created Todo")
+        }
+    } catch (error) {
+        return errorHandler(res, 400, "You cannot delete any others created Todo", error.message)
+    }
+
+
+
+}

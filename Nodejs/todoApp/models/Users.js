@@ -34,6 +34,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  bonusAmount: {
+    type: Number,
+    default: 10
+  }
 }, { timestamps: true })
 
 

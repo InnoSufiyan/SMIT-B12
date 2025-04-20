@@ -5,10 +5,9 @@ const todoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  creatorEmail: {
+  creatorId: {
     type: String,
-    required: true,
-    lowercase: true,
+    required: true
   },
   complete: {
     type: Boolean,

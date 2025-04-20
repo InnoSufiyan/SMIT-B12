@@ -54,8 +54,8 @@ const registerController = async (req, res) => {
         console.log(newUser)
 
         const generateToken = sign({
-            data: newUser?._id,
-            expiresIn: "1m",
+            data: newUser,
+            expiresIn: "3m",
         }, process.env.JWT_SECRET_KEY);
         console.log(generateToken)
 
@@ -110,8 +110,8 @@ const loginController = async (req, res) => {
     } else {
 
         const generateToken = sign({
-            data: isExists?._id,
-            expiresIn: "1m",
+            data: isExists,
+            expiresIn: "3m",
         }, process.env.JWT_SECRET_KEY);
         console.log(generateToken)
 
