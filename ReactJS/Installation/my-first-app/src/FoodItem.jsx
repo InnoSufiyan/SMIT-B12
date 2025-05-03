@@ -3,9 +3,10 @@ export function FoodItem({ imageUrl, name, quantity }) {
         <div style={
             {
                 display: 'flex',
-                border: '2px solid black',
                 marginBottom: '10px',
-                borderRadius: '20px'
+                borderRadius: '20px',
+                width: '45vw',
+                justifyContent: "center"
             }
         }>
             <div style={
@@ -22,7 +23,10 @@ export function FoodItem({ imageUrl, name, quantity }) {
             <div>
                 <p>{name}</p>
                 <p>Bht achi biryani</p>
-                <p>Available: {quantity}</p>
+
+                <p style={{
+                    backgroundColor: quantity ? 'green' : 'grey'
+                }}>{quantity ? `Available: ${quantity}` : 'Out of Stock'}</p>
             </div>
         </div>
     )
