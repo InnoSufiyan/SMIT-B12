@@ -1,11 +1,16 @@
 import React from 'react'
 
-const Button = ({ color, text }) => {
+const Button = ({ color, text, callAdnanFatta, ZainComponent }) => {
+    console.log(ZainComponent, "===>> component")
     return (
-        <button style={{
-            backgroundColor: color,
-            color: 'white'
-        }}>{text}</button>
+        <>
+            {/* <Undefined />  */}
+            {/* <ZainComponent />  */}
+            <button onClick={callAdnanFatta} style={{
+                backgroundColor: color,
+                color: 'white'
+            }}>{text}</button>
+        </>
     )
 }
 

@@ -8,6 +8,7 @@ import { AllFoodItems } from './AllFoodItems'
 import { Description } from './Description'
 import { Sufiyan } from './Sufiyan'
 import Button from './Button'
+import Zain from './Zain'
 
 function App() {
 
@@ -25,9 +26,9 @@ function App() {
 
       {/* <Sufiyan name='Muhammad Sufiyan' age={34} /> */}
 
-      <Button color='blue' text= 'blue' />
-      <Button  color='red' text= 'red' />
-      <Button  color='green' text= 'green' />
+      <Button color='blue' text='blue' />
+      <Button color='red' text='red' ZainComponent={Zain} />
+      <Button color='green' text='green' callAdnanFatta={callAdnanFatta} />
     </>
   )
 }
