@@ -1,39 +1,9 @@
 import React from 'react'
 import ItemList from './ItemList'
 
-function PackagingList() {
+function PackagingList({ itemsList, setItemList }) {
 
-  const itemsList = [
-    {
-      item: 'Luggage',
-      quantity: 2,
-      isCompleted: false
-    },
-    {
-      item: 'ehraam',
-      quantity: 2,
-      isCompleted: false
-    },
-    {
-      item: 'slippers',
-      quantity: 2,
-      isCompleted: true
-    },
-    {
-      item: 'hand cary',
-      quantity: 2,
-      isCompleted: true
-    },
-    {
-      item: 'passport',
-      quantity: 2,
-      isCompleted: false
-    },
-    {
-      item: 'visa',
-      quantity: 2,
-      isCompleted: false
-    }]
+
 
   return (
     <div style={{
@@ -44,7 +14,12 @@ function PackagingList() {
       flexDirection: 'column',
       justifyContent: 'space-between'
     }}>
-      <ItemList itemsList={itemsList} />
+      {
+        itemsList?.length ? <ItemList itemsList={itemsList} setItemList={setItemList} /> : <h3 style={{
+          textAlign: 'center',
+          color: 'white'
+        }}>No Items Selected</h3>
+      }
       <div id='buttons' style={{
         display: 'flex',
         gap: '20px',

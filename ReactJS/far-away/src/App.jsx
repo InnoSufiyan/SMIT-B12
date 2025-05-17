@@ -5,16 +5,19 @@ import './App.css'
 import Logo from './Components/Logo'
 import Form from './Components/Form'
 import PackagingList from './Components/PackagingList'
+import Stats from './Components/Stats'
 
 function App() {
-  
+  const [itemsList, setItemList] = useState([])
+
+  console.log(itemsList, "===>> itemsList")
 
   return (
     <>
       <Logo />
-      <Form />
-      <PackagingList />
-      {/* <Stats /> */}
+      <Form setItemList={setItemList} itemsList={itemsList} />
+      <PackagingList itemsList={itemsList} setItemList={setItemList} />
+      <Stats itemsList={itemsList} />
     </>
   )
 }
