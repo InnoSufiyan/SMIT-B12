@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,6 +9,8 @@ function App() {
 
   const [screen, setScreen] = useState(0)
 
+  let count = 0
+
   const motivationJumlon = [
     'Learn React',
     'Get a Job, and earn new Income',
@@ -17,8 +19,11 @@ function App() {
 
   console.log("abdullah")
 
+  console.log(count, "===>> count on chowk")
+
   const previousHandler = () => {
     console.log("====>>previousHandler")
+
     if (screen == 0) {
       setScreen(2)
     } else {
@@ -27,18 +32,36 @@ function App() {
   }
   const nextHandler = () => {
     console.log("====>>nextHandler")
+    count++
+    console.log(count, "===>> count in next handler")
     if (screen == motivationJumlon.length - 1) {
       setScreen(0)
     } else {                                    //screen
-      setScreen((s)=> s + 1) // 0 + 1 ==>> 1
-      setScreen((s)=> s + 1) // 1 + 1 ==>> 2
+      setScreen((s) => s + 1) // 0 + 1 ==>> 1
+      setScreen((s) => s + 1) // 1 + 1 ==>> 2
     }
   }
+
+  console.log("===>>> Sufiyan 1")
+
+  useEffect(() => {
+
+    console.log("==>> nahaeyga")
+    console.log("==>> kuch khaeyga")
+    console.log("==>> Office jaeyga")
+
+    // cleanup function
+    return () => {
+      console.log("===>> cleanup function")
+    }
+
+  })
 
 
   return (
     <>
       {/* <EkComponent /> */}
+      {console.log("===>> Sufiyan 2")}
       <div className='circleArea'>
         <div className='circle' style={{
           backgroundColor: screen >= 0 ? 'blue' : 'white',
