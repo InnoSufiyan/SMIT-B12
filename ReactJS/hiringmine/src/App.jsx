@@ -20,6 +20,7 @@ import UserPage from './Pages/UserPage'
 import Signup from './Pages/Signup'
 import Signin from './Pages/login'
 import AuthRoute from './PrivateRoutes/AuthRoute'
+import NotFound from './Pages/NotFound'
 
 function App() {
 
@@ -52,7 +53,7 @@ function App() {
           <Route path='deleteUsers' element={DeleteUsers} />
         </Route> */}
 
-        <Route path='*' element={<h1>Not Found</h1>} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )
