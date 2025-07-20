@@ -1,6 +1,8 @@
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 import pkg from 'jsonwebtoken';
+import rateLimit from "express-rate-limit"
+
 
 dotenv.config();
 
@@ -48,4 +50,19 @@ export const GenerateToken = ({ data, expiresIn }) => {
 
 export const VerifyToken = (token) => {
   return verify(token, jwtSecretKey);
+};
+
+// Generic rate limiter function
+export const createRateLimiter = (windowMs, maxRequests, message) => {
+  return rateLimit({
+      windowMs: windowMs,       // Time window in milliseconds
+      max: maxRequests,         // Maximum number of requests allowed
+      message: {
+          status: false,
+          message: message,
+          data: null
+      },
+      standardHeaders: true,    // Return rate limit info in the `RateLimit-*` headers
+      legacyHeaders: false      // Disable the `X-RateLimit-*` headers
+  });
 };
